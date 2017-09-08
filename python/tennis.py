@@ -73,6 +73,9 @@ class TennisGame2:
             return "Thirty"
         if (point==3):
             return "Forty"
+        if (point==4):
+            return "Win"
+
 
     def result(self):
         return self.p1res + "-" + self.p2res
@@ -86,22 +89,12 @@ class TennisGame2:
             result = "Deuce"
 
         if (self.p1points > 0 and self.p2points==0):
-            if (self.p1points==1):
-                self.p1res = "Fifteen"
-            if (self.p1points==2):
-                self.p1res = "Thirty"
-            if (self.p1points==3):
-                self.p1res = "Forty"
+            self.p1res = self.points_to_score(self.p1points)
 
             self.p2res = "Love"
             result = self.result()
         if (self.p2points > 0 and self.p1points==0):
-            if (self.p2points==1):
-                self.p2res = "Fifteen"
-            if (self.p2points==2):
-                self.p2res = "Thirty"
-            if (self.p2points==3):
-                self.p2res = "Forty"
+            self.p2res = self.points_to_score(self.p2points)
 
             self.p1res = "Love"
             result = self.result()
