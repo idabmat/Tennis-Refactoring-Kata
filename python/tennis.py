@@ -72,7 +72,7 @@ class TennisGame2:
 
     def score(self):
         if (self.p1points == self.p2points and self.p1points < 3):
-            return self.points_to_score(self.p1points) + "-All"
+            return "{0}-All".format(self.points_to_score(self.p1points))
         if (self.p1points==self.p2points and self.p1points>2):
             return "Deuce"
 
