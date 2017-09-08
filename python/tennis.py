@@ -65,17 +65,13 @@ class TennisGame2:
             self.P2Score()
 
     def points_to_score(self, point):
-        if (point==0):
-            return "Love"
-        if (point==1):
-            return "Fifteen"
-        if (point==2):
-            return "Thirty"
-        if (point==3):
-            return "Forty"
-        if (point==4):
-            return "Win"
-
+        scores = {
+            0: "Love",
+            1: "Fifteen",
+            2: "Thirty",
+            3: "Forty"
+        }
+        return scores[point]
 
     def score(self):
         if (self.p1points == self.p2points and self.p1points < 3):
