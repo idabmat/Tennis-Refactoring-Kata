@@ -61,16 +61,21 @@ class TennisGame2:
             self.P1Score()
         else:
             self.P2Score()
+
+    def points_to_score(self, point):
+        if (point==0):
+            return "Love"
+        if (point==1):
+            return "Fifteen"
+        if (point==2):
+            return "Thirty"
+        if (point==3):
+            return "Forty"
     
     def score(self):
         result = ""
         if (self.p1points == self.p2points and self.p1points < 3):
-            if (self.p1points==0):
-                result = "Love"
-            if (self.p1points==1):
-                result = "Fifteen"
-            if (self.p1points==2):
-                result = "Thirty"
+            result = self.points_to_score(self.p1points)
             result += "-All"
         if (self.p1points==self.p2points and self.p1points>2):
             result = "Deuce"
