@@ -88,9 +88,9 @@ class TennisGame2:
         if (self.p1points==self.p2points and self.p1points>2):
             return "Deuce"
 
-        if (self.p1points>=4 and self.p2points>=0 and (self.p1points-self.p2points)>=2):
+        if (self.p1points>=4 and (self.p1points-self.p2points)>=2):
             return  "Win for " + self.player1Name
-        if (self.p2points>=4 and self.p1points>=0 and (self.p2points-self.p1points)>=2):
+        if (self.p2points>=4 and (self.p2points-self.p1points)>=2):
             return  "Win for " + self.player2Name
         if (self.p1points > self.p2points and self.p2points >= 3):
             return "Advantage " + self.player1Name
