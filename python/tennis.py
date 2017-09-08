@@ -65,13 +65,12 @@ class TennisGame2:
             self.P2Score()
 
     def points_to_score(self, point):
-        scores = {
+        return {
             0: "Love",
             1: "Fifteen",
             2: "Thirty",
             3: "Forty"
-        }
-        return scores[point]
+        }[point]
 
     def score(self):
         if (self.p1points == self.p2points and self.p1points < 3):
