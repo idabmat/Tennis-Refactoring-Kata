@@ -55,6 +55,8 @@ class TennisGame2:
         self.player2Name = player2Name
         self.p1points = 0
         self.p2points = 0
+        self.p1res = ''
+        self.p2res = ''
 
     def won_point(self, playerName):
         if playerName == self.player1Name:
@@ -72,6 +74,8 @@ class TennisGame2:
         if (point==3):
             return "Forty"
 
+    # def result(self):
+
     def score(self):
         result = ""
         if (self.p1points == self.p2points and self.p1points < 3):
@@ -80,39 +84,36 @@ class TennisGame2:
         if (self.p1points==self.p2points and self.p1points>2):
             result = "Deuce"
 
-        P1res = ""
-        P2res = ""
         if (self.p1points > 0 and self.p2points==0):
             if (self.p1points==1):
-                P1res = "Fifteen"
+                self.p1res = "Fifteen"
             if (self.p1points==2):
-                P1res = "Thirty"
+                self.p1res = "Thirty"
             if (self.p1points==3):
-                P1res = "Forty"
+                self.p1res = "Forty"
 
-            P2res = "Love"
-            result = P1res + "-" + P2res
+            self.p2res = "Love"
+            result = self.p1res + "-" + self.p2res
         if (self.p2points > 0 and self.p1points==0):
             if (self.p2points==1):
-                P2res = "Fifteen"
+                self.p2res = "Fifteen"
             if (self.p2points==2):
-                P2res = "Thirty"
+                self.p2res = "Thirty"
             if (self.p2points==3):
-                P2res = "Forty"
+                self.p2res = "Forty"
 
-            P1res = "Love"
-            result = P1res + "-" + P2res
-
+            self.p1res = "Love"
+            result = self.p1res + "-" + self.p2res
 
         if (self.p1points>self.p2points and self.p1points < 4):
-            P1res = self.points_to_score(self.p1points)
-            P2res = self.points_to_score(self.p2points)
-            result = P1res + "-" + P2res
+            self.p1res = self.points_to_score(self.p1points)
+            self.p2res = self.points_to_score(self.p2points)
+            result = self.p1res + "-" + self.p2res
 
         if (self.p2points>self.p1points and self.p2points < 4):
-            P1res = self.points_to_score(self.p1points)
-            P2res = self.points_to_score(self.p2points)
-            result = P1res + "-" + P2res
+            self.p1res = self.points_to_score(self.p1points)
+            self.p2res = self.points_to_score(self.p2points)
+            result = self.p1res + "-" + self.p2res
 
         if (self.p1points > self.p2points and self.p2points >= 3):
             result = "Advantage " + self.player1Name
