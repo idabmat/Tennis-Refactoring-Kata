@@ -77,14 +77,13 @@ class TennisGame2:
             return "Deuce"
 
         if (self.p1points>=4 and (self.p1points-self.p2points)>=2):
-            return  "Win for " + self.player1Name
+            return "Win for {0}".format(self.player1Name)
         if (self.p2points>=4 and (self.p2points-self.p1points)>=2):
-            return  "Win for " + self.player2Name
+            return "Win for {0}".format(self.player2Name)
         if (self.p1points > self.p2points and self.p2points >= 3):
-            return "Advantage " + self.player1Name
-
+            return "Advantage {0}".format(self.player1Name)
         if (self.p2points > self.p1points and self.p1points >= 3):
-            return "Advantage " + self.player2Name
+            return "Advantage {0}".format(self.player2Name)
 
         return  "{0}-{1}".format(self.points_to_score(self.p1points), self.points_to_score(self.p2points))
 
@@ -98,7 +97,6 @@ class TennisGame2:
 
     def P1Score(self):
         self.p1points +=1
-
 
     def P2Score(self):
         self.p2points +=1
