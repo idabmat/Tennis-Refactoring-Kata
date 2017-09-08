@@ -78,10 +78,11 @@ class TennisGame2:
 
 
     def result(self):
-        return self.p1res + "-" + self.p2res
+        p1res = self.points_to_score(self.p1points)
+        p2res = self.points_to_score(self.p2points)
+        return p1res + "-" + p2res
 
     def score(self):
-        result = ""
         if (self.p1points == self.p2points and self.p1points < 3):
             result = self.points_to_score(self.p1points)
             result += "-All"
@@ -89,24 +90,14 @@ class TennisGame2:
             result = "Deuce"
 
         if (self.p1points > 0 and self.p2points==0):
-            self.p1res = self.points_to_score(self.p1points)
-
-            self.p2res = "Love"
             result = self.result()
         if (self.p2points > 0 and self.p1points==0):
-            self.p2res = self.points_to_score(self.p2points)
-
-            self.p1res = "Love"
             result = self.result()
 
         if (self.p1points>self.p2points and self.p1points < 4):
-            self.p1res = self.points_to_score(self.p1points)
-            self.p2res = self.points_to_score(self.p2points)
             result = self.result()
 
         if (self.p2points>self.p1points and self.p2points < 4):
-            self.p1res = self.points_to_score(self.p1points)
-            self.p2res = self.points_to_score(self.p2points)
             result = self.result()
 
         if (self.p1points > self.p2points and self.p2points >= 3):
