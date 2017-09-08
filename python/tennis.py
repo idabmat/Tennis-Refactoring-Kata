@@ -98,18 +98,7 @@ class TennisGame2:
         if (self.p2points > self.p1points and self.p1points >= 3):
             return "Advantage " + self.player2Name
 
-        if (self.p1points > 0 and self.p2points==0):
-            result = self.result()
-        if (self.p2points > 0 and self.p1points==0):
-            result = self.result()
-
-        if (self.p1points>self.p2points and self.p1points < 4):
-            result = self.result()
-
-        if (self.p2points>self.p1points and self.p2points < 4):
-            result = self.result()
-
-        return result
+        return self.result()
 
     def SetP1Score(self, number):
         for i in range(number):
