@@ -87,14 +87,6 @@ class TennisGame2:
 
         return  "{0}-{1}".format(self.points_to_score(self.p1points), self.points_to_score(self.p2points))
 
-    def SetP1Score(self, number):
-        for i in range(number):
-            self.P1Score()
-
-    def SetP2Score(self, number):
-        for i in range(number):
-            self.P2Score()
-
     def P1Score(self):
         self.p1points +=1
 
