@@ -75,7 +75,6 @@ class TennisGame2:
             return "{0}-All".format(self.points_to_score(self.p1points))
         if (self.p1points==self.p2points and self.p1points>2):
             return "Deuce"
-
         if (self.p1points>=4 and (self.p1points-self.p2points)>=2):
             return "Win for {0}".format(self.player1Name)
         if (self.p2points>=4 and (self.p2points-self.p1points)>=2):
